@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hang Man</title>
+		<script src="./assets/index.62415c15.js" defer></script>
+		<link rel="stylesheet" href="./assets/index.7a5479cd.css" />
+	</head>
+	<body>
+		<div class="dialouge">
+			<span class="gameover"></span>
+			<button class="start">Start</button>
+		</div>
+		<div id="app">
+			<div class="word"></div>
+			<svg
+				width="347"
+				height="268"
+				viewBox="0 0 347 268"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				class="man"
+			>
+				<g id="man">
+					<rect width="347" height="268" />
+					<rect
+						id="rope"
+						x="167"
+						y="13"
+						width="7"
+						height="104"
+						fill="black"
+						class="hangman"
+					/>
+					<circle
+						id="head"
+						cx="154"
+						cy="83"
+						r="30"
+						fill="#B58080"
+						class="hangman"
+					/>
+					<rect
+						id="neck"
+						x="160"
+						y="100.681"
+						width="7"
+						height="27"
+						transform="rotate(-22.5226 160 100.681)"
+						class="hangman"
+						fill="#B58080"
+					/>
+					<rect
+						id="rope_neck"
+						x="165"
+						y="112.681"
+						width="7"
+						height="6.71414"
+						transform="rotate(-22.5226 165 112.681)"
+						class="hangman"
+						fill="black"
+					/>
+					<rect
+						id="body"
+						x="169"
+						y="121"
+						width="7"
+						height="85"
+						class="hangman"
+						fill="#B58080"
+					/>
+					<rect
+						id="left_arm"
+						x="135"
+						y="156.749"
+						width="49.2831"
+						height="7"
+						transform="rotate(-46.5 135 156.749)"
+						class="hangman"
+						fill="#B58080"
+					/>
+					<rect
+						id="right_arm"
+						x="175.078"
+						y="121"
+						width="49.2831"
+						height="7"
+						transform="rotate(46.5 175.078 121)"
+						class="hangman"
+						fill="#B58080"
+					/>
+					<rect
+						id="left_leg"
+						x="134.715"
+						y="235.049"
+						width="49.6977"
+						height="7"
+						transform="rotate(-46.5 134.715 235.049)"
+						class="hangman"
+						fill="#B58080"
+					/>
+					<rect
+						id="right_leg"
+						x="175.078"
+						y="199"
+						width="49.8102"
+						height="7"
+						transform="rotate(46.5 175.078 199)"
+						class="hangman"
+						fill="#B58080"
+					/>
+					<rect
+						id="hanger"
+						x="117"
+						y="9"
+						width="219"
+						height="9"
+						class="hangman"
+						fill="#655959"
+					/>
+					<rect
+						id="pole"
+						x="328"
+						y="9"
+						width="12"
+						height="249"
+						class="hangman"
+						fill="#655959"
+					/>
+					<rect
+						id="base"
+						x="8"
+						y="240"
+						width="332"
+						height="18"
+						class="hangman"
+						fill="#655959"
+					/>
+					<rect
+						id="left_shoe"
+						x="124"
+						y="232"
+						width="16"
+						height="8"
+						class="hangman"
+						fill="#B58080"
+					/>
+					<rect
+						id="right_shoe"
+						x="204"
+						y="232"
+						width="16"
+						height="8"
+						class="hangman"
+						fill="#B58080"
+					/>
+				</g>
+			</svg>
+		</div>
+		<div class="keyboard"></div>
+		<script>
+			const first_row = document.createElement("div");
+			first_row.className = "first_row row";
+			document.querySelector(".keyboard").append(first_row);
+			for (let i = 0; i < 10; i++) {
+				const key = document.createElement("button");
+				key.className = `key ${String.fromCharCode(65 + i)}`;
+				key.textContent = String.fromCharCode(65 + i);
+				first_row.append(key);
+			}
+			const second_row = document.createElement("div");
+			second_row.className = "second_row row";
+			document.querySelector(".keyboard").append(second_row);
+			for (let i = 10; i < 19; i++) {
+				const key = document.createElement("button");
+				key.className = `key ${String.fromCharCode(65 + i)}`;
+				key.textContent = String.fromCharCode(65 + i);
+				second_row.append(key);
+			}
+			const last_row = document.createElement("div");
+			last_row.className = "last_row row";
+			document.querySelector(".keyboard").append(last_row);
+			for (let i = 19; i < 26; i++) {
+				const key = document.createElement("button");
+				key.className = `key ${String.fromCharCode(65 + i)}`;
+				key.textContent = String.fromCharCode(65 + i);
+				last_row.append(key);
+			}
+		</script>
+	</body>
+</html>
